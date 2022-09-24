@@ -11,9 +11,9 @@ import Grid from '@mui/material/Grid';
 function App() {
   const [ taskState, setTaskState ] = useState({
     tasks: [
-      { id: 1, title:"Dishes", description: "Empty dishwasher", deadline: "Today", done: false },
-      { id: 2, title: "Laundry", description: "Fold clothes and put away", deadline: "Tomorrow", done: false },
-      { id: 3, title: "Tidy up", deadline: "Today", done: false}
+      { id: 1, title:"Dishes", description: "Empty dishwasher", priority: "Low", deadline: "Today", done: false },
+      { id: 2, title: "Laundry", description: "Fold clothes and put away", priority: "Medium", deadline: "Tomorrow", done: false },
+      { id: 3, title: "Tidy up", priority: "High", deadline: "Today", done: false}
     ]
   });
 
@@ -45,6 +45,9 @@ function App() {
           break;
       case "description":
           form.description = event.target.value;
+          break;
+      case "priority":
+          form.priority = event.target.value;
           break;
       case "deadline":
           form.deadline = event.target.value;
@@ -95,6 +98,7 @@ function App() {
                 description={task.description}
                 deadline={task.deadline}
                 done={task.done}
+                priority={task.priority}
                 key={task.id}
                 markDone = {() => doneHandler(index)}
                 deleteTask = {() => deleteHandler(index)}
