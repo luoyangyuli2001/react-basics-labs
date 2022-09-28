@@ -40,7 +40,7 @@ const AddTaskForm = (props) => {
           label="Priority"
           InputLabelProps={{ shrink: true }}
           select = {true}
-          defaultValue = "Low"
+          defaultValue = ""
           onChange={(event) => props.change(event)}
         >
           <MenuItem value={"Low"}>Low</MenuItem>
